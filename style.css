@@ -49,11 +49,12 @@ header .target{
     transition: transform 0.3s, background-color 0.3s;
 }
 .gameEndPopup{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 80vh;
+    transition: all 0.3s ease;
 }
 .gameEndPopup .popupContent{
     width: 50%;
@@ -85,5 +86,45 @@ header .target{
     transition: background-color 0.3s;
 }
 .gameEndPopup .popupContent button:hover{
+    background: #777;
+}
+.gameStartPopup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+    transition: all 0.3s ease;
+}
+.gameStartPopup .popupContent{
+    width: 60%;
+    height: 60%;
+    background: #222;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.gameStartPopup .popupContent h2{
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+.gameStartPopup .popupContent p{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.gameStartPopup .popupContent button{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.gameStartPopup .popupContent button:hover{
     background: #777;
 }

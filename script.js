@@ -1,10 +1,26 @@
 let circlecontainer = document.querySelector('.circlecontainer');
 let targetNumber = document.querySelector('.targetNumber');
 let scoreValue = document.querySelector('.scoreValue');
+let gameEndPopup = document.querySelector('.gameEndPopup');
+let finalScore = document.querySelector('.finalScore');
+let gameStartPopup = document.querySelector('.gameStartPopup');
+let startButton = document.querySelector('.startButton');
 let time = document.querySelector('.time');
 let numberOfCircles = 40;
-let timer = 60;
+let timer = 10;
+
+startButton.addEventListener('click', () => {
+    gameStartPopup.style.display = 'none';
+    circlecontainer.style.display = 'flex';
+    generateTargetNumber();
+
 setInterval(() => {
+    if (timer <= 0) {
+        gameEndPopup.style.display = 'flex';
+        finalScore.innerText = scoreValue.innerText;
+        circlecontainer.style.display = 'none';
+        return;
+    }
     timer--;
     time.innerText = timer;
 }, 1000);
@@ -48,4 +64,8 @@ circlecontainer.addEventListener('mouseout', (e) => {
     if (e.target.classList.contains('circle')) {
         e.target.style.backgroundColor = '';
     }
+});
+});
+document.querySelector('.restartButton').addEventListener('click', () => {
+    location.reload(); // Reload the page to restart the game
 });
